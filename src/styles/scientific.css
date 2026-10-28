@@ -1,0 +1,58 @@
+.sci {
+  display: grid; gap: 1.25rem; max-width: 640px; justify-self: center; width: 100%;
+  padding: clamp(1.2rem, 3.5vw, 1.8rem); background: var(--surface);
+  border: 1.5px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+}
+
+.sci__screen {
+  display: grid; gap: 0.45rem; padding: 1.1rem 1.25rem; background: var(--bg);
+  border: 1.5px solid var(--line); border-radius: var(--radius);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.sci__screen input {
+  width: 100%; border: 0; outline: 0; background: transparent; color: var(--ink);
+  font-family: var(--font-display); font-size: 1.65rem; font-weight: 700; text-align: right;
+  letter-spacing: -0.02em;
+}
+.sci__screen input:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 8px; }
+.sci__screen output {
+  text-align: right; color: var(--accent); font-size: 1.2rem; font-weight: 600;
+  font-variant-numeric: tabular-nums; overflow-wrap: anywhere;
+}
+.sci__meta {
+  display: flex; justify-content: space-between; align-items: center; gap: 0.85rem;
+  color: var(--muted); font-size: 0.92rem; font-weight: 500;
+}
+.sci__meta .btn { min-height: 38px; padding: 0 0.9rem; font-size: 0.88rem; border-radius: 10px; }
+.sci__meta .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.sci__keys { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.55rem; }
+.sci__keys .key {
+  height: 52px; font-size: 1.1rem; border-radius: 14px; padding: 0;
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sci__keys .key:hover { transform: translateY(-1px); }
+.sci__keys .key:active { transform: scale(0.95); }
+.sci__keys .key--wide { grid-column: span 4; }
+
+.sci__history {
+  margin-top: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--line);
+}
+.sci__history h2 { font-size: 1.15rem; color: var(--ink); font-weight: 700; }
+.sci__history ul { display: grid; gap: 0.4rem; margin-top: 0.6rem; }
+.sci__history li button {
+  width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 0.7rem 0.9rem; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--key); color: var(--ink); text-align: left; overflow-wrap: anywhere;
+  transition: all 0.15s;
+}
+.sci__history li button:hover {
+  background: var(--key-hover); border-color: var(--accent); transform: translateX(3px);
+}
+.sci__history li button strong { color: var(--accent); }
+
+@media (max-width: 480px) {
+  .sci { padding: 0.9rem; }
+  .sci__keys { gap: 0.4rem; }
+  .sci__keys .key { height: 48px; font-size: 0.98rem; border-radius: 10px; }
+}

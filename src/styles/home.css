@@ -1,0 +1,140 @@
+/* Hero */
+.hero { padding-block: clamp(2.5rem, 7vw, 5.5rem) 2rem; position: relative; }
+.hero__inner { display: grid; gap: 3rem; align-items: center; }
+.hero__copy { display: grid; gap: 1.4rem; align-content: center; }
+.hero h1 {
+  font-size: clamp(2.6rem, 6.5vw, 4.4rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  color: var(--ink);
+}
+.hero h1 span.gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero__copy > p { color: var(--muted); font-size: 1.18rem; max-width: 48ch; line-height: 1.6; }
+
+@media (min-width: 960px) {
+  .hero__inner { grid-template-columns: 1.15fr 430px; gap: 4.5rem; }
+}
+
+/* Search */
+.search { position: relative; max-width: 520px; }
+.search__field {
+  display: flex; align-items: center; gap: 0.85rem; padding: 0 1.1rem; height: 60px;
+  background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.search__field:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent), var(--shadow-lg);
+  transform: translateY(-1px);
+}
+.search__field svg { color: var(--muted); flex: none; transition: color 0.2s; }
+.search__field:focus-within svg { color: var(--accent); }
+.search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; color: var(--ink); font-size: 1.05rem; }
+.search input::placeholder { color: var(--muted); }
+.search__list {
+  position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 10px);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow-lg); padding: 0.5rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: fadeInDown 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.search__list a, .search__list .is-soon {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.8rem 1rem; border-radius: 12px;
+  transition: all 0.15s;
+}
+.search__list a:hover { background: var(--key); transform: translateX(3px); }
+.search__list a:hover span { color: var(--accent); }
+.search__list small {
+  color: var(--muted); font-size: 0.8rem; font-weight: 500;
+  padding: 0.2rem 0.6rem; border-radius: 99px; background: var(--key);
+}
+.search__list .is-soon { opacity: 0.5; }
+.search__empty { padding: 1.2rem; color: var(--muted); text-align: center; font-size: 0.95rem; }
+
+/* Sections */
+.section { padding-block: 4rem 1.5rem; }
+.section h2 { font-size: clamp(2rem, 4.5vw, 2.75rem); letter-spacing: -0.03em; color: var(--ink); }
+.section__sub { color: var(--muted); margin-top: 0.6rem; max-width: 54ch; font-size: 1.05rem; }
+
+/* Category grid: cards differ in size and colour by category */
+.cat-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.25rem; margin-top: 2.2rem; }
+.cat {
+  --tint: color-mix(in srgb, var(--c) 8%, var(--surface));
+  display: flex; flex-direction: column; gap: 0.75rem; padding: 1.75rem;
+  background: var(--tint); border: 1px solid color-mix(in srgb, var(--c) 22%, var(--line));
+  border-radius: var(--radius); transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+}
+.cat:hover {
+  transform: translateY(-4px);
+  border-color: var(--c);
+  box-shadow: 0 12px 28px -8px color-mix(in srgb, var(--c) 25%, transparent);
+}
+.cat--span3 { grid-column: span 3; min-height: 240px; }
+.cat--span2 { grid-column: span 2; }
+.cat__icon {
+  display: grid; place-items: center; width: 52px; height: 52px; border-radius: 16px;
+  background: var(--c); color: #fff; margin-bottom: 0.4rem;
+  box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--c) 50%, transparent);
+  transition: transform 0.2s;
+}
+.cat:hover .cat__icon { transform: scale(1.08) rotate(3deg); }
+.cat h3 { font-size: 1.45rem; font-weight: 700; color: var(--ink); }
+.cat p { color: var(--muted); font-size: 0.98rem; line-height: 1.5; }
+.cat__tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: auto; padding-top: 1rem; }
+.cat__tags li {
+  font-size: 0.82rem; font-weight: 500; padding: 0.25rem 0.75rem; border-radius: 99px;
+  background: var(--surface); border: 1px solid color-mix(in srgb, var(--c) 25%, var(--line));
+  color: var(--ink); transition: background 0.15s;
+}
+.cat:hover .cat__tags li { border-color: var(--c); }
+
+@media (max-width: 960px) {
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .cat--span3, .cat--span2 { grid-column: span 1; min-height: 0; }
+  .cat--span2:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .cat-grid { grid-template-columns: 1fr; }
+  .cat--span2:last-child { grid-column: auto; }
+}
+
+/* Featured (live) calculators */
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.tool {
+  display: flex; flex-direction: column; gap: 0.65rem; padding: 1.6rem;
+  background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius);
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm); position: relative; overflow: hidden;
+}
+.tool:hover {
+  transform: translateY(-4px);
+  border-color: var(--c);
+  box-shadow: 0 12px 30px -8px color-mix(in srgb, var(--c) 22%, transparent);
+}
+.tool__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.2rem; }
+.tool__icon {
+  display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 14px;
+  background: color-mix(in srgb, var(--c) 14%, var(--surface)); color: var(--c);
+  transition: all 0.2s;
+}
+.tool:hover .tool__icon { background: var(--c); color: #fff; transform: scale(1.06); }
+.tool h3 { font-size: 1.25rem; font-weight: 700; color: var(--ink); }
+.tool p { color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.tool small {
+  color: var(--muted); font-weight: 600; font-size: 0.82rem; margin-top: auto; padding-top: 0.75rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.tool:hover small { color: var(--c); }
