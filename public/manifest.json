@@ -5,6 +5,11 @@
   "theme_color": "#2F4BFF",
   "background_color": "#111827",
   "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
   "orientation": "portrait-primary",
   "scope": "/",
   "start_url": "/",
@@ -14,6 +19,12 @@
     "productivity",
     "finance"
   ],
+  "launch_handler": {
+    "client_mode": [
+      "navigate-existing",
+      "auto"
+    ]
+  },
   "icons": [
     {
       "src": "/pwa-192x192.png",
@@ -32,6 +43,48 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Kalkivo Calculators"
+    },
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Kalkivo Mobile View"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "GST Calculator",
+      "short_name": "GST",
+      "description": "Calculate GST tax easily",
+      "url": "/#/gst-calculator",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Scientific Calculator",
+      "short_name": "Scientific",
+      "description": "Scientific and math calculator",
+      "url": "/#/scientific-calculator",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }
