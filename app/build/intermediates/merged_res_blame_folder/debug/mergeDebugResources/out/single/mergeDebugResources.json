@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.11.1\\com.kalkivo.app-debug-31:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.11.1\\com.kalkivo.app-main-33:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "com.kalkivo.app-debug-31:/drawable_ic_notification_icon.xml.flat",
+        "source": "com.kalkivo.app-main-33:/drawable/ic_notification_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.11.1\\com.kalkivo.app-debug-31:\\xml_shortcuts.xml.flat",
+        "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.11.1\\com.kalkivo.app-main-33:\\xml\\shortcuts.xml"
+    },
+    {
+        "merged": "com.kalkivo.app-debug-31:/mipmap-nodpi_ic_maskable.png.flat",
+        "source": "com.kalkivo.app-main-33:/mipmap-nodpi/ic_maskable.png"
+    },
+    {
+        "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.11.1\\com.kalkivo.app-debug-31:\\xml_filepaths.xml.flat",
+        "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.11.1\\com.kalkivo.app-main-33:\\xml\\filepaths.xml"
+    },
+    {
+        "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.11.1\\com.kalkivo.app-debug-31:\\drawable-anydpi_shortcut_legacy_background.xml.flat",
+        "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.11.1\\com.kalkivo.app-main-33:\\drawable-anydpi\\shortcut_legacy_background.xml"
+    },
+    {
+        "merged": "com.kalkivo.app-debug-31:/drawable_splash.png.flat",
+        "source": "com.kalkivo.app-main-33:/drawable/splash.png"
+    }
+]
