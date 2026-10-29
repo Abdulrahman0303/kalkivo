@@ -21,8 +21,8 @@ export default function Footer() {
           <h3>Kalkivo</h3>
           <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#about">Privacy</a></li>
-            <li><a href="#about">Contact</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="https://github.com/Abdulrahman0303/kalkivo" target="_blank" rel="noopener">Contact</a></li>
           </ul>
         </div>
       </div>
